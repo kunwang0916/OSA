@@ -8,7 +8,6 @@ import Button from '@material-ui/core/Button';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -39,54 +38,33 @@ const styles = theme => ({
 
 const LIST_DATA = [
   {
-    title: 'course A1',
-    author: 'Jalal Zevulun',
-    image: 'http://www.learnod.com/img/courses/technical-analysis-online-course.jpg'
+    title: 'Cultivating Healthy Relationships Through Sports',
+    author: 'Kelsie Whitehead',
+    image: 'https://cdn-s3.si.com/styles/marquee_large_2x/s3/images/AUTISMSPORTS_web.jpg_0.jpeg',
   },
   {
-    title: 'course A1',
-    author: 'Jalal Zevulun',
-    image: 'http://www.learnod.com/img/courses/technical-analysis-online-course.jpg'
+    title: 'Autism Awareness Course for Parents - Autism Training',
+    author: 'Taslima Harrison',
+    image: 'http://paragonautismservices.com/wp-content/uploads/2013/08/Family-Training-980x445.jpg'
   },
   {
-    title: 'course A1',
-    author: 'Jalal Zevulun',
-    image: 'http://www.learnod.com/img/courses/technical-analysis-online-course.jpg'
-  },
-  {
-    title: 'course A1',
-    author: 'Jalal Zevulun',
-    image: 'http://www.learnod.com/img/courses/technical-analysis-online-course.jpg'
-  },
-  {
-    title: 'course A1',
-    author: 'Jalal Zevulun',
-    image: 'http://www.learnod.com/img/courses/technical-analysis-online-course.jpg'
-  },
-  {
-    title: 'course A1',
-    author: 'Jalal Zevulun',
-    image: 'http://www.learnod.com/img/courses/technical-analysis-online-course.jpg'
-  },
-  {
-    title: 'course A1',
-    author: 'Jalal Zevulun',
-    image: 'http://www.learnod.com/img/courses/technical-analysis-online-course.jpg'
-  },
-  {
-    title: 'course A1',
-    author: 'Jalal Zevulun',
-    image: 'http://www.learnod.com/img/courses/technical-analysis-online-course.jpg'
-  },
+    title: 'Autism Step by Step: The ultimate guide for families',
+    author: 'Montell Morrow',
+    image: 'https://alm7.wikispaces.com/file/view/feature-autism.jpg/337155652/800x345/feature-autism.jpg'
+  }
 ];
 
 class CourseList extends Component {
+  onCourseClick = ()=> {
+    this.props.history.push('/courseDetail');
+  }
 
   generateList = (listData, classes) => {
     let rows = listData.map((data) => {
       return (
         <GridListTile key={data.img}
-          cols={2}>
+          cols={2}
+          onClick={this.onCourseClick}>
           <img src={data.image} alt={data.title} />
           <GridListTileBar
             title={data.title}
@@ -106,10 +84,7 @@ class CourseList extends Component {
         className={classes.gridList}
         spacing={20} 
         >
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">CourseList</ListSubheader>
-        </GridListTile>
-          {rows}
+        {rows}
       </GridList>
     );
   }
