@@ -11,6 +11,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const styles = theme => ({
   root: {
@@ -121,10 +122,12 @@ class CourseList extends Component {
         <AppBar position="static">
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+              <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit" className={classes.flex}>
               OSA
             </Typography>
+            <Button color="inherit">Log out</Button>
           </Toolbar>
         </AppBar>
         { list }
