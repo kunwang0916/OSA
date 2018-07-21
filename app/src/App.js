@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -7,25 +6,24 @@ import {
   Switch,
 } from 'react-router-dom'
 
+import Login from './components/Login';
+import CourseDetail from './components/CourseDetail';
+import CourseList from './components/CourseList';
+
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-        </div>
-          <Switch>
-            <Route path="/login" component={Login} />
-            <Route path="/course_list" component={About} />
-            <Route path="/course_detail" component={Hello} />
-          </Switch>
-      </Router>
+      <div className="App">
+        <Router>
+            <Switch>
+              <Route exact path="/" component={Login} />
+              <Route path="/login" component={Login} />
+              <Route path="/courseList" component={CourseList} />
+              <Route path="/courseDetail" component={CourseDetail} />
+            </Switch>
+        </Router>
+      </div>
+      
     );
   }
 }
