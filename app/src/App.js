@@ -9,6 +9,7 @@ import {
 import Login from './components/Login';
 import CourseDetail from './components/CourseDetail';
 import CourseList from './components/CourseList';
+import Home from './components/Home';
 
 class App extends Component {
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
       <div className="App">
         <Router>
             <Switch>
-              <Route exact path="/" component={Login} />
+              <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
               <Route path="/courseList" component={CourseList} />
               <Route path="/courseDetail" component={CourseDetail} />
