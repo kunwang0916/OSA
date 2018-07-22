@@ -72,6 +72,7 @@ class CourseDetail extends Component {
       playerVars: { // https://developers.google.com/youtube/player_parameters
         autoplay: 0,
         fs: 1,
+        controls: 1,
       }
     };
     const count = listData.length;
