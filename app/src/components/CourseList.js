@@ -59,6 +59,10 @@ class CourseList extends Component {
     this.props.history.push('/courseDetail');
   }
 
+  onLogoutClick =()=> {
+    this.props.history.push('/');
+  }
+
   generateList = (listData, classes) => {
     let rows = listData.map((data) => {
       return (
@@ -102,7 +106,8 @@ class CourseList extends Component {
             <Typography variant="title" color="inherit" className={classes.flex}>
               OSA
             </Typography>
-            <Button color="inherit">Log out</Button>
+            <Button color="inherit"
+              onClick={this.onLogoutClick}>Log out</Button>
           </Toolbar>
         </AppBar>
         { list }

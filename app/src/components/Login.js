@@ -57,7 +57,7 @@ class Login extends Component {
   onClickLogin = () => {
     const { userName, password } = this.state || {};
     // prototype demo use hard code 
-    if (userName === 'guest_user' && password === '123456') {
+    if (userName === 'test@gmail.com' && password === '123456') {
       this.props.history.push('/courseList');
     } else {
       toast.error('wrong account info');
